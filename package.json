@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch-sass": "nodemon -e scss -x \"npm run build-sass\"",
+    "build-sass": "node-sass scss --output ./assets  --output-style=compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kedroviy/portfolio.git"
+  },
+  "author": "kedroviy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kedroviy/portfolio/issues"
+  },
+  "homepage": "https://github.com/kedroviy/portfolio#readme",
+  "devDependencies": {
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.3"
+  }
+}
