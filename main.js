@@ -18,3 +18,34 @@ function myFunction() {
   document.querySelector('#dropdown-button').addEventListener('click', () => {
     myFunction();
   });
+
+  var slideIndex = 1;
+  showSlidesWithControl(slideIndex);
+
+function plusSlides(n) {
+    showSlidesWithControl(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlidesWithControl(slideIndex = n);
+}
+
+function showSlidesWithControl(n) {
+  var i;
+  var slides = document.getElementsByClassName("main-container__section-slider-container__slider-container__slider__slide");
+  
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  slides[slideIndex-1].style.display = "flex";  
+}
+
+document.querySelector('.main-container__section-slider-container__slider-container__control-element-1').addEventListener('click', () => {
+    plusSlides(-1);
+});
+
+document.querySelector('.main-container__section-slider-container__slider-container__control-element-2').addEventListener('click', () => {
+    plusSlides(1);
+});
